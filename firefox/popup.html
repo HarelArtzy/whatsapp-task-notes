@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>WhatsApp Task Notes</title><link rel="stylesheet" href="popup.css"></head>
+<body>
+  <h1>WhatsApp Task Notes</h1>
+  <p id="status">Loading…</p>
+  <button id="toggle" type="button">Start day</button>
+  <p class="hint">Keep WhatsApp Web open and connected. Incoming and outgoing text from chats is collected after Start day until Finish day, without automatically opening chats.</p>
+  <label for="day-select">Review a day</label><select id="day-select" aria-label="Select a day"></select>
+  <p id="count"></p>
+  <div class="actions"><button id="copy" type="button">Copy prompt for Codex</button><button id="clear" class="secondary" type="button">Clear all messages</button></div>
+  <p id="feedback" role="status"></p>
+  <details><summary>Review selected day's messages</summary><div id="messages"></div></details>
+  <details class="prompt-settings"><summary>Edit summary prompt</summary>
+    <label for="prompt-editor">Instructions for Codex</label>
+    <p class="hint">The selected day's messages and browser timezone are added automatically. Save changes before copying.</p>
+    <textarea id="prompt-editor" rows="12" spellcheck="true"></textarea>
+    <div class="actions"><button id="save-prompt" type="button">Save prompt</button><button id="reset-prompt" type="button" class="secondary">Restore default</button></div>
+    <p id="prompt-feedback" role="status"></p>
+  </details>
+  <p class="hint">Messages stay in this browser until cleared. Copying shares text only when you paste it elsewhere.</p>
+  <script src="popup.js"></script>
+</body></html>
